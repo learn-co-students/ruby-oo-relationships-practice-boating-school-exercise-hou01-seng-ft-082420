@@ -23,7 +23,6 @@ class Instructor
     
     def pass_student(student,test_name)
         arr = self.tests.select{ |test| test.student == student && test.test_name == test_name}
-        binding.pry
         if arr.length > 0
             test_index = BoatingTest.all.find_index(arr[0])
             BoatingTest.all[test_index].status = 'passed'
